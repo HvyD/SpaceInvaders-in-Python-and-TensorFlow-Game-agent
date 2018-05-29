@@ -12,10 +12,10 @@ import math
 import random
 
 #Set up the screen
-wn = turtle.Screen()
-wn.bgcolor("black")
-wn.title("Space Invaders")
-wn.bgpic("space_invaders_background.gif")
+screen = turtle.Screen()
+screen.bgcolor("black")
+screen.title("Space Invaders")
+screen.bgpic("space_invaders_background.gif")
 
 #Register the shapes
 turtle.register_shape("invader.gif")
@@ -117,7 +117,7 @@ def fire_bullet():
 	#Declare bulletstate as a global if it needs changed
 	global bulletstate
 	if bulletstate == "ready":
-		#os.system("afplay laser.wav&")
+		#os.system(".wav& file here")
 		bulletstate = "fire"
 		#Move the bullet to the just above the player
 		x = player.xcor()
@@ -167,7 +167,7 @@ while True:
 			
 		#Check for a collision between the bullet and the enemy
 		if isCollision(bullet, enemy):
-			#os.system("afplay explosion.wav&")
+			#os.system(".wav& file here")
 			#Reset the bullet
 			bullet.hideturtle()
 			bulletstate = "ready"
@@ -183,7 +183,7 @@ while True:
 			score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 		
 		if isCollision(player, enemy):
-			#os.system("afplay explosion.wav&")
+			#os.system(".wav& file here")
 			player.hideturtle()
 			enemy.hideturtle()
 			print ("Game Over")
