@@ -70,7 +70,7 @@ for i in range(number_of_enemies):
 
 for enemy in enemies:
 	enemy.color("red")
-	enemy.shape("invader.gif")
+	enemy.shape("invader.gif" )
 	enemy.penup()
 	enemy.speed(0)
 	x = random.randint(-200, 200)
@@ -83,7 +83,7 @@ enemyspeed = 2
 #Create the player's bullet
 bullet = turtle.Turtle()
 bullet.color("yellow")
-bullet.shape("triangle")
+bullet.shape("circle")
 bullet.penup()
 bullet.speed(0)
 bullet.setheading(90)
@@ -117,7 +117,7 @@ def fire_bullet():
 	#Declare bulletstate as a global if it needs changed
 	global bulletstate
 	if bulletstate == "ready":
-		os.system("afplay laser.wav&")
+		#os.system("afplay laser.wav&")
 		bulletstate = "fire"
 		#Move the bullet to the just above the player
 		x = player.xcor()
@@ -167,7 +167,7 @@ while True:
 			
 		#Check for a collision between the bullet and the enemy
 		if isCollision(bullet, enemy):
-			os.system("afplay explosion.wav&")
+			#os.system("afplay explosion.wav&")
 			#Reset the bullet
 			bullet.hideturtle()
 			bulletstate = "ready"
@@ -183,7 +183,7 @@ while True:
 			score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 		
 		if isCollision(player, enemy):
-			os.system("afplay explosion.wav&")
+			#os.system("afplay explosion.wav&")
 			player.hideturtle()
 			enemy.hideturtle()
 			print ("Game Over")
